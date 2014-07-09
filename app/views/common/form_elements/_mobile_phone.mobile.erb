@@ -31,6 +31,7 @@
           <%= form.input :mobile_suffix, :label => t(:Suffix) %>
         </li>
 
+        <% if CONFIG['confirm_mobile_phone'] %>
         <li data-role="fieldcontain" class="verification-block mobile-phone ignore-toggle" id="confirm_mobile_phone_number">
           <%= form.label :mobile_phone_confirmation %>
           <p>&nbsp;</p>
@@ -38,6 +39,7 @@
           <%= form.input :mobile_prefix_confirmation, :collection => prefixes, :label => t(:Prefix_confirmation), :prompt => t(:Choose) %>
           <%= form.input :mobile_suffix_confirmation, :label => t(:Suffix_confirmation) %>
         </li>
+        <% end %>
     <% else %>
         <% if owner.verify_with_mobile_phone? %>
             <li data-role="fieldcontain">

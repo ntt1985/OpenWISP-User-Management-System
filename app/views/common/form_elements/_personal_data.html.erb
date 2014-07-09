@@ -51,7 +51,9 @@
 
 <%= form.input :email %>
 
+<% if CONFIG['confirm_email'] %>
 <%= form.input :email_confirmation %>
+<% end %>
 
 <% if current_operator %>
     <% content_for :after_defaults do %>
@@ -69,5 +71,7 @@
     <%= form.input :password_confirmation, :as => :string %>
 <% else %>
     <%= form.input :password %>
+    <% if CONFIG['confirm_registration_password'] %>
     <%= form.input :password_confirmation %>
+    <% end %>
 <% end %>

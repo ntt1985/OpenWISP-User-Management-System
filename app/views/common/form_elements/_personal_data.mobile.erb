@@ -59,15 +59,19 @@
   <%= form.input :email %>
 </li>
 
+<% if CONFIG['confirm_email'] %>
 <li data-role="fieldcontain" class="ignore-toggle">
   <%= form.input :email_confirmation %>
 </li>
+<% end %>
 
 <li data-role="fieldcontain">
   <%= form.input :password %>
 </li>
 
+<% if CONFIG['confirm_registration_password'] %>
 <li data-role="fieldcontain" class="ignore-toggle">
   <%= form.input :password_confirmation %>
 </li>
+<% end %>
 
